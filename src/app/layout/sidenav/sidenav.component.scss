@@ -27,14 +27,14 @@
     vertical-align: text-top;
 
     svg {
-      width: 26px;
+      width: 28px;
     }
   }
 
   .sidenav-toolbar-logo {
     cursor: pointer;
     outline: none;
-    margin-left: $sidenav-item-padding-left;
+    margin-left: 0.4rem/*$sidenav-item-padding-left*/;
     margin-bottom: -5px;
 
     svg {

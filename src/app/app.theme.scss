@@ -9,8 +9,8 @@ $theme-primary-hue: 700;
 $theme-accent-hue: 500;
 $theme-warn-hue: 500;
 
-$theme-primary: mat.define-palette(mat.$blue-palette, $theme-primary-hue);
-$theme-accent: mat.define-palette(mat.$teal-palette, $theme-accent-hue);
+$theme-primary: mat.define-palette(mat.$purple-palette, $theme-primary-hue);
+$theme-accent: mat.define-palette(mat.$purple-palette, $theme-accent-hue);
 $theme-warn: mat.define-palette(mat.$red-palette, $theme-warn-hue);
 
 $theme: mat.define-light-theme((

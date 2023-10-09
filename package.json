@@ -1,6 +1,6 @@
 {
-  "name": "fury",
-  "version": "14.0.0",
+  "name": "e-pay-web-client",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
