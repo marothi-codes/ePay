@@ -13,13 +13,14 @@ import { fadeInRightAnimation } from '../../../../@fury/animations/fade-in-right
 import { fadeInUpAnimation } from '../../../../@fury/animations/fade-in-up.animation';
 
 @Component({
-  selector: 'fury-all-in-one-table',
-  templateUrl: './all-in-one-table.component.html',
-  styleUrls: ['./all-in-one-table.component.scss'],
-  animations: [fadeInRightAnimation, fadeInUpAnimation]
+  selector: "fury-all-in-one-table",
+  templateUrl: "./all-in-one-table.component.html",
+  styleUrls: ["./all-in-one-table.component.scss"],
+  animations: [fadeInRightAnimation, fadeInUpAnimation],
 })
-export class AllInOneTableComponent implements OnInit, AfterViewInit, OnDestroy {
-
+export class AllInOneTableComponent
+  implements OnInit, AfterViewInit, OnDestroy
+{
   /**
    * Simulating a service with HTTP that returns Observables
    * You probably want to remove this and do all requests in a service with HTTP
@@ -30,16 +31,41 @@ export class AllInOneTableComponent implements OnInit, AfterViewInit, OnDestroy 
 
   @Input()
   columns: ListColumn[] = [
-    { name: 'Checkbox', property: 'checkbox', visible: false },
-    { name: 'Image', property: 'image', visible: true },
-    { name: 'Name', property: 'name', visible: true, isModelProperty: true },
-    { name: 'First Name', property: 'firstName', visible: false, isModelProperty: true },
-    { name: 'Last Name', property: 'lastName', visible: false, isModelProperty: true },
-    { name: 'Street', property: 'street', visible: true, isModelProperty: true },
-    { name: 'Zipcode', property: 'zipcode', visible: true, isModelProperty: true },
-    { name: 'City', property: 'city', visible: true, isModelProperty: true },
-    { name: 'Phone', property: 'phoneNumber', visible: true, isModelProperty: true },
-    { name: 'Actions', property: 'actions', visible: true },
+    { name: "Checkbox", property: "checkbox", visible: false },
+    // { name: "Image", property: "image", visible: true },
+    {
+      name: "Account No",
+      property: "name",
+      visible: false,
+      isModelProperty: true,
+    },
+    {
+      name: "Account No",
+      property: "firstName",
+      visible: true,
+      isModelProperty: true,
+    },
+    {
+      name: "Currency",
+      property: "lastName",
+      visible: true,
+      isModelProperty: true,
+    },
+    {
+      name: "Amount",
+      property: "street",
+      visible: true,
+      isModelProperty: true,
+    },
+    { name: "Date", property: "zipcode", visible: true, isModelProperty: true },
+    {
+      name: "Trans Ref",
+      property: "city",
+      visible: true,
+      isModelProperty: true,
+    },
+    // { name: 'Phone', property: 'phoneNumber', visible: true, isModelProperty: true },
+    { name: "Actions", property: "actions", visible: true },
   ] as ListColumn[];
   pageSize = 10;
   dataSource: MatTableDataSource<Customer> | null;
@@ -47,11 +73,12 @@ export class AllInOneTableComponent implements OnInit, AfterViewInit, OnDestroy 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
-  constructor(private dialog: MatDialog) {
-  }
+  constructor(private dialog: MatDialog) {}
 
   get visibleColumns() {
-    return this.columns.filter(column => column.visible).map(column => column.property);
+    return this.columns
+      .filter((column) => column.visible)
+      .map((column) => column.property);
   }
 
   /**
@@ -59,19 +86,19 @@ export class AllInOneTableComponent implements OnInit, AfterViewInit, OnDestroy 
    * We are simulating this request here.
    */
   getData() {
-    return of(ALL_IN_ONE_TABLE_DEMO_DATA.map(customer => new Customer(customer)));
+    return of(
+      ALL_IN_ONE_TABLE_DEMO_DATA.map((customer) => new Customer(customer))
+    );
   }
 
   ngOnInit() {
-    this.getData().subscribe(customers => {
+    this.getData().subscribe((customers) => {
       this.subject$.next(customers);
     });
 
     this.dataSource = new MatTableDataSource();
 
-    this.data$.pipe(
-      filter(data => !!data)
-    ).subscribe((customers) => {
+    this.data$.pipe(filter((data) => !!data)).subscribe((customers) => {
       this.customers = customers;
       this.dataSource.data = customers;
     });
@@ -83,38 +110,46 @@ export class AllInOneTableComponent implements OnInit, AfterViewInit, OnDestroy 
   }
 
   createCustomer() {
-    this.dialog.open(CustomerCreateUpdateComponent).afterClosed().subscribe((customer: Customer) => {
-      /**
-       * Customer is the updated customer (if the user pressed Save - otherwise it's null)
-       */
-      if (customer) {
+    this.dialog
+      .open(CustomerCreateUpdateComponent)
+      .afterClosed()
+      .subscribe((customer: Customer) => {
         /**
-         * Here we are updating our local array.
-         * You would probably make an HTTP request here.
+         * Customer is the updated customer (if the user pressed Save - otherwise it's null)
          */
-        this.customers.unshift(new Customer(customer));
-        this.subject$.next(this.customers);
-      }
-    });
+        if (customer) {
+          /**
+           * Here we are updating our local array.
+           * You would probably make an HTTP request here.
+           */
+          this.customers.unshift(new Customer(customer));
+          this.subject$.next(this.customers);
+        }
+      });
   }
 
   updateCustomer(customer) {
-    this.dialog.open(CustomerCreateUpdateComponent, {
-      data: customer
-    }).afterClosed().subscribe((customer) => {
-      /**
-       * Customer is the updated customer (if the user pressed Save - otherwise it's null)
-       */
-      if (customer) {
+    this.dialog
+      .open(CustomerCreateUpdateComponent, {
+        data: customer,
+      })
+      .afterClosed()
+      .subscribe((customer) => {
         /**
-         * Here we are updating our local array.
-         * You would probably make an HTTP request here.
+         * Customer is the updated customer (if the user pressed Save - otherwise it's null)
          */
-        const index = this.customers.findIndex((existingCustomer) => existingCustomer.id === customer.id);
-        this.customers[index] = new Customer(customer);
-        this.subject$.next(this.customers);
-      }
-    });
+        if (customer) {
+          /**
+           * Here we are updating our local array.
+           * You would probably make an HTTP request here.
+           */
+          const index = this.customers.findIndex(
+            (existingCustomer) => existingCustomer.id === customer.id
+          );
+          this.customers[index] = new Customer(customer);
+          this.subject$.next(this.customers);
+        }
+      });
   }
 
   deleteCustomer(customer) {
@@ -122,7 +157,12 @@ export class AllInOneTableComponent implements OnInit, AfterViewInit, OnDestroy 
      * Here we are updating our local array.
      * You would probably make an HTTP request here.
      */
-    this.customers.splice(this.customers.findIndex((existingCustomer) => existingCustomer.id === customer.id), 1);
+    this.customers.splice(
+      this.customers.findIndex(
+        (existingCustomer) => existingCustomer.id === customer.id
+      ),
+      1
+    );
     this.subject$.next(this.customers);
   }
 
@@ -135,6 +175,5 @@ export class AllInOneTableComponent implements OnInit, AfterViewInit, OnDestroy 
     this.dataSource.filter = value;
   }
 
-  ngOnDestroy() {
-  }
+  ngOnDestroy() {}
 }

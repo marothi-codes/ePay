@@ -1,10 +1,10 @@
 <fury-page-layout mode="card">
   <fury-page-layout-header>
-    <fury-breadcrumbs [@fadeInRight] [crumbs]="['Tables']" current="All-In-One Table"></fury-breadcrumbs>
+    <fury-breadcrumbs [@fadeInRight] [crumbs]="['Tables']" current="Transactions"></fury-breadcrumbs>
   </fury-page-layout-header>
 
   <fury-page-layout-content [@fadeInUp]>
-    <fury-list name="Customers" [columns]="columns" (filterChange)="onFilterChange($event)">
+    <fury-list name="Transactions" [columns]="columns" (filterChange)="onFilterChange($event)">
       <div class="actions">
         <button class="create" (click)="createCustomer()" type="button" mat-mini-fab color="primary">
           <mat-icon>add</mat-icon>
@@ -27,12 +27,12 @@
         </ng-container>
 
         <!-- Image Column -->
-        <ng-container matColumnDef="image">
+        <!-- <ng-container matColumnDef="image">
           <th *matHeaderCellDef class="image-cell" mat-header-cell></th>
           <td *matCellDef="let row" class="image-cell" mat-cell>
             <img src="http://i.pravatar.cc/30?u={{ row.name }}">
           </td>
-        </ng-container>
+        </ng-container> -->
 
         <!-- fullName Column -->
         <ng-container *ngFor="let column of columns">

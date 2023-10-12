@@ -19,19 +19,19 @@ $sidebar-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .40) !default;
 @import "../../shared/sidebar/sidebar.directive.theme";
 
 // Sidenav
-$sidenav-background: #610c40 !default;
-$sidenav-color: #ededed !default;
+$sidenav-background: #fdfdfd !default;
+$sidenav-color: #610c40 !default;
 $sidenav-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .40) !default;
 $sidenav-toolbar-background: darken($sidenav-background, 3.5) !default;
-$sidenav-logo-color: white !default;
-$sidenav-secondary-text: $light-secondary-text !default;
+$sidenav-logo-color: #610c40 !default;
+$sidenav-secondary-text: #420b2d !default;
 $sidenav-collapsed-hover-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .40) !default;
 
 @import "../../../app/layout/sidenav/sidenav.component.theme";
 
 // Sidenav Item
-$sidenav-item-color: $sidenav-color !default;
-$sidenav-item-color-hover: white !default;
+$sidenav-item-color: #610c40 !default;
+$sidenav-item-color-hover: #880d59 !default;
 $sidenav-item-color-active: $theme-color-primary-contrast !default;
 
 $sidenav-item-background-hover: darken($sidenav-background, 2.5) !default;

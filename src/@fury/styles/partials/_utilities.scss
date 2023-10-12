@@ -228,3 +228,8 @@ blockquote {
   background-size: 64px 128px;
 }
 
+.auth-image {
+  background-image: url("../../../assets/img/backgrounds/auth.webp");
+  background-size: cover;
+  aspect-ratio: 16/9;
+}

@@ -13,22 +13,6 @@
     </fury-card-header-actions>
   </fury-card-header>
 
-  <fury-card-content class="card-content">
-    <fury-recent-sales-widget-table [data]="tableData" [columns]="tableOptions?.columns"
-                                    [pageSize]="tableOptions?.pageSize"></fury-recent-sales-widget-table>
-
-    <div class="content">
-      <canvas *ngIf="chartData"
-              [datasets]="chartData.datasets"
-              [labels]="chartData.labels"
-              [legend]="false"
-              [options]="chartOptions"
-              baseChart
-              chartType="line">
-      </canvas>
-    </div>
-  </fury-card-content>
-
   <mat-menu #menu="matMenu">
     <button mat-menu-item>
       <mat-icon> settings</mat-icon>
