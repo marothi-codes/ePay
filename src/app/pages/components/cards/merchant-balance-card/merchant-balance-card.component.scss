@@ -1,0 +1,29 @@
+.account-balance-card {
+  margin: 0 auto;
+
+  .balance-info {
+    display: flex;
+    flex-direction: column;
+
+    .balance-row {
+      display: flex;
+      justify-content: space-between;
+      margin: 8px 0;
+
+      .balance-label {
+        font-weight: bold;
+      }
+
+    }
+
+    .balance-amount {
+      font-size: 1.2em;
+    }
+
+  }
+
+  mat-card-actions {
+    display: flex;
+    justify-content: left;
+  }
+}

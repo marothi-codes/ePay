@@ -1,0 +1,57 @@
+<mat-card class="account-balance-card" style="padding: 0;">
+
+  <!-- CARD HEADER -->
+  <mat-card-header style="padding: 0.6rem; color: #fff; border-radius: 4px 4px 0 0;"
+    class="header padding background-primary">
+
+    <mat-card-subtitle>&nbsp;</mat-card-subtitle>
+    <mat-card-title>Account Balance</mat-card-title>
+
+  </mat-card-header>
+
+  <mat-divider></mat-divider>
+
+  <!-- CARD CONTENT -->
+  <mat-card-content style="padding: 0 1rem;">
+
+    <div class="balance-info">
+
+      <div class="balance-row">
+        <div class="balance-label">Current Balance: </div>
+        <div class="balance-amount"> {{ currentBalance | currency: 'R' }}</div>
+      </div>
+
+      <div class="balance-row">
+        <div class="balance-label">Retained Amount: </div>
+        <div class="balance-amount"> {{ retainedAmount | currency: 'R' }}</div>
+      </div>
+
+      <div class="balance-row">
+        <div class="balance-label">Available Balance: </div>
+        <div class="balance-amount"><strong>{{ availableBalance | currency: 'R' }}</strong></div>
+      </div>
+
+      <div class="balance-row">
+        <div class="balance-label">Payout Fee: </div>
+        <div class="balance-amount"> {{ payoutFee | currency: 'R' }}</div>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <div class="balance-row">
+        <div class="balance-label">Available for Payout: </div>
+        <div class="balance-amount primary-text">&nbsp;<strong>{{ availableForPayout | currency: 'R' }}</strong></div>
+      </div>
+
+    </div>
+
+  </mat-card-content>
+
+  <mat-divider></mat-divider>
+
+  <!-- CARD ACTIONS -->
+  <mat-card-actions style="padding: 0.6rem;">
+    <button mat-raised-button color="primary" style="margin-left: 0.6rem;">Request Payout</button>
+  </mat-card-actions>
+
+</mat-card>
