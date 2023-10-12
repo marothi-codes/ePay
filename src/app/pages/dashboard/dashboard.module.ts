@@ -15,6 +15,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import { DashboardService } from './dashboard.service';
 import { FurySharedModule } from '../../../@fury/fury-shared.module';
+import { MerchantBalanceCardComponent } from '../components/cards/merchant-balance-card/merchant-balance-card.component';
 
 @NgModule({
   imports: [
@@ -33,10 +34,10 @@ import { FurySharedModule } from '../../../@fury/fury-shared.module';
     QuickInfoWidgetModule,
     RecentSalesWidgetModule,
     AdvancedPieChartWidgetModule,
-    MarketWidgetModule
+    MarketWidgetModule,
   ],
-  declarations: [DashboardComponent],
-  providers: [DashboardService]
+  declarations: [DashboardComponent,
+    MerchantBalanceCardComponent],
+  providers: [DashboardService],
 })
-export class DashboardModule {
-}
+export class DashboardModule {}
