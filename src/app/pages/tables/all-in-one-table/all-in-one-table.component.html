@@ -6,9 +6,9 @@
   <fury-page-layout-content [@fadeInUp]>
     <fury-list name="Transactions" [columns]="columns" (filterChange)="onFilterChange($event)">
       <div class="actions">
-        <button class="create" (click)="createCustomer()" type="button" mat-mini-fab color="primary">
+        <!-- <button class="create" (click)="createCustomer()" type="button" mat-mini-fab color="primary">
           <mat-icon>add</mat-icon>
-        </button>
+        </button> -->
       </div>
 
       <table [dataSource]="dataSource" mat-table matSort>

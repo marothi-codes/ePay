@@ -57,7 +57,7 @@ export class AllInOneTableComponent
       visible: true,
       isModelProperty: true,
     },
-    { name: "Date", property: "zipcode", visible: true, isModelProperty: true },
+    { name: "Date", property: "mail", visible: true, isModelProperty: true },
     {
       name: "Trans Ref",
       property: "city",

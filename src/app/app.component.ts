@@ -1,16 +1,16 @@
-import { DOCUMENT } from "@angular/common";
-import { Component, Inject, Renderer2 } from "@angular/core";
-import { MatIconRegistry } from "@angular/material/icon";
-import { SidenavService } from "./layout/sidenav/sidenav.service";
-import { ThemeService } from "../@fury/services/theme.service";
-import { ActivatedRoute } from "@angular/router";
-import { filter } from "rxjs/operators";
-import { Platform } from "@angular/cdk/platform";
-import { SplashScreenService } from "../@fury/services/splash-screen.service";
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject, Renderer2 } from '@angular/core';
+import { MatIconRegistry } from '@angular/material/icon';
+import { SidenavService } from './layout/sidenav/sidenav.service';
+import { ThemeService } from '../@fury/services/theme.service';
+import { ActivatedRoute } from '@angular/router';
+import { filter } from 'rxjs/operators';
+import { Platform } from '@angular/cdk/platform';
+import { SplashScreenService } from '../@fury/services/splash-screen.service';
 
 @Component({
-  selector: "fury-root",
-  templateUrl: "./app.component.html",
+  selector: 'fury-root',
+  templateUrl: './app.component.html',
 })
 export class AppComponent {
   constructor(
@@ -24,12 +24,12 @@ export class AppComponent {
     private splashScreenService: SplashScreenService
   ) {
     this.route.queryParamMap
-      .pipe(filter((queryParamMap) => queryParamMap.has("style")))
+      .pipe(filter((queryParamMap) => queryParamMap.has('style')))
       .subscribe((queryParamMap) =>
-        this.themeService.setStyle(queryParamMap.get("style"))
+        this.themeService.setStyle(queryParamMap.get('style'))
       );
 
-    this.iconRegistry.setDefaultFontSetClass("material-icons-outlined");
+    this.iconRegistry.setDefaultFontSetClass('material-icons-outlined');
     this.themeService.theme$.subscribe((theme) => {
       if (theme[0]) {
         this.renderer.removeClass(this.document.body, theme[0]);
@@ -39,53 +39,54 @@ export class AppComponent {
     });
 
     if (this.platform.BLINK) {
-      this.renderer.addClass(this.document.body, "is-blink");
+      this.renderer.addClass(this.document.body, 'is-blink');
     }
 
+
+    // Add navigation items to sidebar.
     this.sidenavService.addItems([
       {
-        name: "YOUR ACCOUNT",
+        name: 'YOUR ACCOUNT',
         position: 5,
-        type: "subheading",
-        customClass: "first-subheading",
+        type: 'subheading',
+        customClass: 'first-subheading',
       },
       {
-        name: "Dashboard",
-        routeOrFunction: "/",
-        icon: "dashboard",
+        name: 'Dashboard',
+        routeOrFunction: '/',
+        icon: 'dashboard',
         position: 10,
         pathMatchExact: true,
       },
       {
-        name: "Transactions",
-        routeOrFunction: "/tables/all-in-one-table",
-        icon: "assignment",
-        badge: "22", // TODO: Pull transactions qty from backend service.
-        badgeColor: "#D86281",
+        name: 'Transactions',
+        routeOrFunction: '/tables/all-in-one-table',
+        icon: 'assignment',
+        // badge: '22', // TODO: Pull transactions qty from backend service.
+        // badgeColor: '#D86281',
         position: 15,
       },
       {
-        name: "Accounts",
-        routeOrFunction: "/apps/calendar",
-        icon: "date_range",
+        name: 'Accounts',
+        routeOrFunction: '/apps/calendar',
+        icon: 'account_balance',
         position: 20,
       },
       {
-        name: "Statements",
-        routeOrFunction: "/apps/inbox",
-        icon: "inbox",
+        name: 'Statements',
+        routeOrFunction: '/apps/inbox',
+        icon: 'inbox',
         position: 25,
       },
       {
-        name: "Payouts",
-        routeOrFunction: "/apps/chat",
-        icon: "chat",
+        name: 'Payouts',
+        routeOrFunction: '/payouts',
+        icon: 'attach_money',
         position: 30,
-        badgeColor: "#009688",
       },
       {
-        name: "SETTINGS",
-        type: "subheading",
+        name: 'PAYMENT SETTINGS',
+        type: 'subheading',
         position: 35,
       },
       // {
@@ -140,15 +141,15 @@ export class AppComponent {
       //   badgeColor: "#4CAF50",
       // },
       {
-        name: "Payment Methods",
-        routeOrFunction: "/coming-soon",
-        icon: "watch_later",
+        name: 'Payment Methods',
+        routeOrFunction: '/coming-soon',
+        icon: 'credit_card',
         position: 50,
       },
       {
-        name: "Recurring Billing",
-        routeOrFunction: "/blank",
-        icon: "picture_in_picture",
+        name: 'Recurring Billing',
+        routeOrFunction: '/blank',
+        icon: 'card_membership',
         position: 55,
       },
     ]);
