@@ -3,6 +3,8 @@
 .fury-page {
   padding: $padding;
   display: block;
+  background-color: #dfdfdf;
+  min-height: 100vh;
 
   @include layout-bp(lt-md) {
     padding: $padding-md;

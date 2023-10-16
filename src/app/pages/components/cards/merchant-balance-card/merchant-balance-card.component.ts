@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: "fury-merchant-balance-card",
-  templateUrl: "./merchant-balance-card.component.html",
-  styleUrls: ["./merchant-balance-card.component.scss"],
+  selector: 'fury-merchant-balance-card',
+  templateUrl: './merchant-balance-card.component.html',
+  styleUrls: ['./merchant-balance-card.component.scss'],
 })
 export class MerchantBalanceCardComponent implements OnInit {
 

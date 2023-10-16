@@ -72,12 +72,12 @@ export class AppComponent {
         icon: 'account_balance',
         position: 20,
       },
-      {
-        name: 'Statements',
-        routeOrFunction: '/apps/inbox',
-        icon: 'inbox',
-        position: 25,
-      },
+      // {
+      //   name: 'Statements',
+      //   routeOrFunction: '/apps/inbox',
+      //   icon: 'inbox',
+      //   position: 25,
+      // },
       {
         name: 'Payouts',
         routeOrFunction: '/payouts',

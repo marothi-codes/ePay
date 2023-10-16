@@ -1,11 +1,224 @@
 <fury-page-layout>
 
   <fury-page-layout-header>
-    <fury-breadcrumbs [crumbs]="['Payouts']" current="Payout"></fury-breadcrumbs>
+    <fury-breadcrumbs [crumbs]="['Payouts']" current="Payout Admin"></fury-breadcrumbs>
   </fury-page-layout-header>
 
-  <fury-page-layout-content>
-    <fury-page-layout-demo-content></fury-page-layout-demo-content>
+  <fury-page-layout-content style="margin: 1.2rem 1.2rem 0;">
+
+    <mat-card>
+      <h1>Payouts</h1>
+
+      <div>
+        <mat-divider></mat-divider>
+
+        <p>
+          Send us a payout request for any withdrawal amount <strong>(within - 'Available for Payout')</strong>,
+          update your payout bank account details or set a consistent payout schedule.
+        </p>
+      </div>
+    </mat-card>
+
+    <div fxLayout="row" style="margin: 1.2rem 0">
+      <!-- Left Column (Typography) -->
+      <div fxFlex="40" style="margin-right: 0.6rem">
+        <mat-card style="min-height: 300px">
+          <mat-card-content>
+            <!-- Add your typography content here -->
+            <h2>Payout Administration</h2>
+            <mat-divider></mat-divider>
+
+            <p>
+              Here you can make a payout request for your ePay funds to be transferred into your bank account.
+              The withdrawn amount should reflect in your account within 48 hours in a work week.
+            </p>
+
+            <p>
+              To reduce the risk of fraud, the funds will only eligible and available for Payout after 48 hours
+              <strong>(withholding period)</strong> after a successful sale.
+
+              <br/>
+
+              A retained balance may also be implemented for the same reason.
+            </p>
+
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <!-- Right Column (Forms) -->
+      <!-- Form 1 -->
+      <fury-merchant-balance-card fxFlex="60"></fury-merchant-balance-card>
+
+    </div>
+
+    <!--  PAYOUT ACCOUNT  -->
+    <div fxLayout="row" style="margin: 1.2rem 0">
+
+      <div fxFlex="40" style="margin-right: 0.6rem">
+        <mat-card style="min-height: 300px">
+          <mat-card-content>
+            <!-- Add your typography content here -->
+            <h2>Payout Account</h2>
+            <mat-divider></mat-divider>
+
+            <p>
+              Here you can make a payout request for your ePay funds to be transferred into your bank account.
+              The withdrawn amount should reflect in your account within 48 hours in a work week.
+            </p>
+
+          </mat-card-content>
+        </mat-card>
+
+      </div>
+
+      <div fxFlex="60">
+
+        <!-- Form 2 -->
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Your Account Details</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <mat-divider></mat-divider>
+            <br/>
+
+            <form>
+
+              <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="16px">
+
+                <mat-form-field fxFlex="49">
+                  <mat-label>Bank</mat-label>
+                  <mat-select>
+                    <mat-option value="Absa">Absa</mat-option>
+                    <mat-option value="African Bank">African Bank</mat-option>
+                    <mat-option value="Bidvest Bank">Bidvest Bank</mat-option>
+                    <mat-option value="Capitec">Capitec</mat-option>
+                    <mat-option value="Discovery">Discovery</mat-option>
+                    <mat-option value="FNB">FNB</mat-option>
+                    <mat-option value="Investec">Investec</mat-option>
+                    <mat-option value="Nedbank">Nedbank</mat-option>
+                    <mat-option value="Standard Bank">Standard Bank</mat-option>
+                    <mat-option value="Tyme Bank">Tyme Bank</mat-option>
+                  </mat-select>
+                </mat-form-field>
+
+                <mat-form-field fxFlex>
+                  <mat-label>Account Type</mat-label>
+                  <mat-select>
+                    <mat-option value="Cheque/ Transmission">Cheque/ Transmission</mat-option>
+                    <mat-option value="Savings">Savings</mat-option>
+                  </mat-select>
+                </mat-form-field>
+
+              </div>
+
+              <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="16px">
+
+                <mat-form-field fxFlex>
+                  <input matInput placeholder="Branch Name" type="text">
+                </mat-form-field>
+
+                <mat-form-field color="accent" fxFlex.gt-sm>
+                  <input matInput placeholder="Branch Code" type="number">
+                </mat-form-field>
+
+              </div>
+
+              <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="16px">
+
+                <mat-form-field color="primary" fxFlex.gt-sm>
+                  <input matInput placeholder="Account Number" type="text">
+                </mat-form-field>
+
+                <mat-form-field color="accent" fxFlex.gt-sm>
+                  <input matInput placeholder="Account Holder" type="text">
+                </mat-form-field>
+
+              </div>
+
+              <div fxLayout="row">
+                <button mat-raised-button color="primary" type="submit" class="submit-button">
+                  Save
+                </button>
+              </div>
+
+            </form>
+
+          </mat-card-content>
+        </mat-card>
+
+      </div>
+
+    </div>
+
+    <!--  PAYOUT SCHEDULE  -->
+    <div fxLayout="row" style="margin-top: 0.6rem">
+
+      <div fxFlex="40" style="margin-right: 0.6rem">
+        <mat-card style="min-height: 140px">
+          <mat-card-content>
+            <!-- Add your typography content here -->
+            <h2>Payout Schedule</h2>
+            <mat-divider></mat-divider>
+
+            <p>
+              Automate the Payout Process by simply setting up a schedule so that funds can be transferred to
+              your Payout Account on an as-per-schedule basis.
+            </p>
+
+          </mat-card-content>
+        </mat-card>
+
+      </div>
+
+      <div fxFlex="60">
+
+        <!-- Form 3 -->
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Payout Schedule</mat-card-title>
+          </mat-card-header>
+
+          <mat-card-content>
+
+            <mat-divider></mat-divider>
+            <br/>
+            <form [formGroup]="payoutForm" (ngSubmit)="onSubmit()">
+
+              <div fxLayout="row" fxLayoutGap.gt-sm="16px">
+                <mat-form-field fxFlex>
+                  <mat-label>Payout Frequency</mat-label>
+                  <mat-select>
+                    <mat-option value="Daily">Daily</mat-option>
+                    <mat-option value="Weekly">Weekly</mat-option>
+                    <mat-option value="Monthly">Monthly</mat-option>
+                  </mat-select>
+                </mat-form-field>
+
+                <mat-form-field fxFlex>
+                  <mat-label>Payout Amount</mat-label>
+                  <input matInput formControlName="payoutAmount" type="number" required>
+                  <mat-error *ngIf="payoutForm.get('payoutAmount').hasError('required')">
+                    Payout Amount is required
+                  </mat-error>
+                </mat-form-field>
+              </div>
+
+              <div fxLayout="row">
+                <button mat-raised-button color="primary" type="submit" class="submit-button">
+                  Save
+                </button>
+              </div>
+
+            </form>
+          </mat-card-content>
+        </mat-card>
+
+      </div>
+
+    </div>
+
   </fury-page-layout-content>
 
 </fury-page-layout>
