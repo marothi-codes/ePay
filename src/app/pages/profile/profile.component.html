@@ -1,0 +1,216 @@
+<fury-page-layout mode="card">
+
+    <fury-page-layout-header>
+        <fury-breadcrumbs current="Customer Profile"></fury-breadcrumbs>
+    </fury-page-layout-header>
+
+    <fury-page-layout-content>
+        <fury-card>
+
+            <!--  HEADER  -->
+            <fury-card-header>
+
+                <fury-card-header-heading>
+                    <h2>Personal Details</h2>
+                </fury-card-header-heading>
+            </fury-card-header>
+            <!-- HEADER END -->
+
+            <!-- CONTENT -->
+            <fury-card-content>
+                <p>
+                    Minim eum rebum kasd lorem accusam sea eos nobis ut magna ut. Stet dolores ut no et sea vero ipsum
+                    stet lorem nibh kasd dolor nostrud suscipit magna nihil. Iusto facilisis aliquyam est sit dolores
+                    voluptua nulla est aliquam. Diam facilisi dolore tempor sed. Elitr clita sed ipsum erat voluptua
+                    kasd duo in tempor lorem invidunt aliquyam volutpat erat lorem. Sadipscing est ipsum sea dolores sit
+                    lorem elitr est vero in eos et amet vero esse magna augue.
+                </p>
+
+                <!-- FIRST ROW -->
+                <div fxFlex="noshrink" fxLayout="column" [fxLayoutGap]="gap" fxLayout.gt-sm="row">
+                    <!-- LEFT COLUMN -->
+                    <div [fxFlex.gt-sm]="col(6)" [fxLayoutGap]="gap" fxFlex="grow" fxLayout="column" class="fullheight">
+                        <h3>Personal Information</h3>
+
+                        <p>
+                            Manage and update the profile details that are linked to your respective eZaga account(s),
+                            such as your name,
+                            ID/ Passport Number, contact details and address information.
+                        </p>
+                    </div>
+                    <!-- END LEFT COLUMN -->
+
+                    <!-- RIGHT COLUMN -->
+                    <div [fxFlex.gt-sm]="col(2)" [fxLayoutGap]="gap" fxFlex="grow" fxLayout="column">
+
+                        <!-- PERSONAL DETAILS FORM -->
+                        <form>
+
+                            <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="16px">
+
+                                <mat-form-field fxFlex>
+                                    <input matInput placeholder="First Name" type="text">
+                                </mat-form-field>
+
+                                <mat-form-field color="accent" fxFlex.gt-sm>
+                                    <input matInput placeholder="Last Name" type="number">
+                                </mat-form-field>
+
+                            </div>
+
+                            <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="16px">
+
+                                <mat-form-field fxFlex>
+                                    <mat-label>ID Type</mat-label>
+                                    <mat-select>
+                                        <mat-option value="SA ID">SA ID</mat-option>
+                                        <mat-option value="Passport">Passport</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+
+                                <mat-form-field color="primary" fxFlex.gt-sm>
+                                    <input matInput placeholder="ID Number" type="text">
+                                </mat-form-field>
+
+                            </div>
+
+                            <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="16px">
+
+                                <mat-form-field fxFlex fxFlex.gt-sm="49">
+                                    <mat-label>Country</mat-label>
+                                    <mat-select>
+                                        <mat-option value="South Africa">South Africa</mat-option>
+                                        <mat-option value="Botswana">Botswana</mat-option>
+                                        <mat-option value="United Arab Emirates">United Arab Emirates</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+
+                            </div>
+
+                            <div fxLayout="row" style="padding-bottom: 1rem">
+                                <button mat-raised-button color="primary" type="submit" class="submit-button">
+                                    Save
+                                </button>
+                            </div>
+
+                        </form>
+                        <!-- END PERSONAL DETAILS FORM -->
+
+                    </div>
+                    <!-- END RIGHT COLUMN -->
+                </div>
+                <!-- END FIRST ROW ---------------------------------------------------------------------------------------- -->
+
+                <mat-divider></mat-divider>
+                <br/>
+
+                <!-- SECOND ROW -->
+                <div fxFlex="noshrink" fxLayout="column" [fxLayoutGap]="gap" fxLayout.gt-sm="row">
+                    <!-- LEFT COLUMN -->
+                    <div [fxFlex.gt-sm]="col(6)" [fxLayoutGap]="gap" fxFlex="grow" fxLayout="column" class="fullheight">
+                        <h3>Your Contact Details</h3>
+
+                        <p>
+                            Use the form to manage your contact information and keep it up to date at all times.
+                        </p>
+                    </div>
+                    <!-- END LEFT COLUMN -->
+
+                    <!-- RIGHT COLUMN -->
+                    <div [fxFlex.gt-sm]="col(2)" [fxLayoutGap]="gap" fxFlex="grow" fxLayout="column">
+
+                        <fury-contact-details-form></fury-contact-details-form>
+
+                        <!-- CONTACT DETAILS FORM -->
+                        <form>
+
+                            <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="16px">
+
+                                <mat-form-field fxFlex="49">
+                                    <mat-label>Email Address</mat-label>
+                                    <input matInput type="email" required>
+                                </mat-form-field>
+
+                            </div>
+
+                            <div fxLayout="row" style="padding-bottom: 1rem">
+                                <button mat-raised-button color="primary" type="submit" class="submit-button">
+                                    Save
+                                </button>
+                            </div>
+
+                        </form>
+                        <!-- END CONTACT DETAILS FORM -->
+
+                    </div>
+                    <!-- END RIGHT COLUMN -->
+                </div>
+                <!-- END SECOND ROW -------------------------------------------------------------------------------------- -->
+
+                <mat-divider></mat-divider>
+                <br/>
+
+                <!-- THIRD ROW -->
+                <div fxFlex="noshrink" fxLayout="column" [fxLayoutGap]="gap" fxLayout.gt-sm="row">
+                    <!-- LEFT COLUMN -->
+                    <div [fxFlex.gt-sm]="col(6)" [fxLayoutGap]="gap" fxFlex="grow" fxLayout="column" class="fullheight">
+                        <h3>Your Cheque/ Credit Card Details</h3>
+
+                        <p>
+                            Manage and maintain the cheque/ credit card details that are linked to your ePay account
+                            conveniently using the form.
+                        </p>
+                    </div>
+                    <!-- END LEFT COLUMN -->
+
+                    <!-- RIGHT COLUMN -->
+                    <div [fxFlex.gt-sm]="col(2)" [fxLayoutGap]="gap" fxFlex="grow" fxLayout="column">
+
+                        <!-- CARD DETAILS FORM -->
+                        <form>
+
+                            <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="16px">
+
+                                <mat-form-field color="primary" fxFlex.gt-sm>
+                                    <input matInput placeholder="Account Number" type="text">
+                                </mat-form-field>
+
+                                <mat-form-field color="accent" fxFlex.gt-sm>
+                                    <input matInput placeholder="Account Holder" type="text">
+                                </mat-form-field>
+
+                            </div>
+
+                            <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="16px">
+
+                                <mat-form-field color="primary" fxFlex.gt-sm>
+                                    <input matInput placeholder="Account Number" type="text">
+                                </mat-form-field>
+
+                                <mat-form-field color="accent" fxFlex.gt-sm>
+                                    <input matInput placeholder="Account Holder" type="text">
+                                </mat-form-field>
+
+                            </div>
+
+                            <div fxLayout="row" style="padding-bottom: 1rem">
+                                <button mat-raised-button color="primary" type="submit" class="submit-button">
+                                    Save
+                                </button>
+                            </div>
+
+                        </form>
+                        <!-- END CARD DETAILS FORM -->
+
+                    </div>
+                    <!-- END RIGHT COLUMN -->
+                </div>
+                <!-- END THIRD ROW ---------------------------------------------------------------------------------------- -->
+
+            </fury-card-content>
+            <!-- END CONTENT -->
+
+        </fury-card>
+    </fury-page-layout-content>
+
+</fury-page-layout>

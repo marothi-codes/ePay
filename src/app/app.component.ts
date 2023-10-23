@@ -142,13 +142,13 @@ export class AppComponent {
       // },
       {
         name: 'Payment Methods',
-        routeOrFunction: '/coming-soon',
+        routeOrFunction: '/payment-methods',
         icon: 'credit_card',
         position: 50,
       },
       {
         name: 'Recurring Billing',
-        routeOrFunction: '/blank',
+        routeOrFunction: '/recurring-billing',
         icon: 'card_membership',
         position: 55,
       },

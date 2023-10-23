@@ -25,13 +25,6 @@ const routes: Routes = [
       ).then((m) => m.ForgotPasswordModule),
   },
   {
-    path: 'coming-soon',
-    loadChildren: () =>
-      import('./pages/coming-soon/coming-soon.module').then(
-        (m) => m.ComingSoonModule
-      ),
-  },
-  {
     path: '',
     component: LayoutComponent,
     children: [
@@ -44,20 +37,25 @@ const routes: Routes = [
         pathMatch: 'full',
       },
       {
+        path: 'profile',
+        loadChildren: () =>
+          import('./pages/profile/profile.module').then((m) => m.ProfileModule),
+      },
+      {
         path: 'payouts',
         loadChildren: () =>
           import('./pages/payouts/payouts.module').then((m) => m.PayoutsModule),
       },
       {
-        path: 'apps/inbox',
+        path: 'payment-methods',
         loadChildren: () =>
-          import('./pages/apps/inbox/inbox.module').then((m) => m.InboxModule),
+          import('./pages/payment-methods/payment-methods.module').then((m) => m.PaymentMethodsModule),
       },
       {
-        path: 'apps/calendar',
+        path: 'recurring-billing',
         loadChildren: () =>
-          import('./pages/apps/calendar/calendar.module').then(
-            (m) => m.CalendarAppModule
+          import('./pages/recurring-billing/recurring-billing.module').then(
+            (m) => m.RecurringBillingModule
           ),
       },
       {
@@ -137,7 +135,7 @@ const routes: Routes = [
     preloadingStrategy: PreloadAllModules,
     scrollPositionRestoration: 'enabled',
     anchorScrolling: 'enabled',
-    relativeLinkResolution: 'legacy'
+    // relativeLinkResolution: 'legacy'
   })],
   exports: [RouterModule]
 })
