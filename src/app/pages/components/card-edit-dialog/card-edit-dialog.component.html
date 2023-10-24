@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>Edit Card</h2>
+<mat-dialog-content>
+    <mat-form-field>
+        <input matInput formControlName="cardHolderName" placeholder="Cardholder Name">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput formControlName="cardNumber" placeholder="Card Number">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput formControlName="expirationDate" placeholder="Expiration Date">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput formControlName="cvv" placeholder="Expiration Date">
+    </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button (click)="onSaveClick()">Save</button>
+    <button mat-button (click)="onCancelClick()">Cancel</button>
+</mat-dialog-actions>

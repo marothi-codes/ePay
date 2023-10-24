@@ -1,0 +1,39 @@
+<form [formGroup]="phoneForm" fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="6px">
+
+    <!-- CELLPHONE NUMBER -->
+    <mat-form-field fxFlex="10">
+        <mat-label>Code</mat-label>
+        <mat-select formControlName="cellCountryCode">
+            <mat-option *ngFor="let country of countries" [value]="country.code">
+                {{ country.name }} (+{{ country.code }})
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field fxFlex="38">
+        <mat-label>Cellphone Number</mat-label>
+        <input matInput formControlName="cellPhoneNumber">
+    </mat-form-field>
+
+    <!-- BIZ PHONE NUMBER -->
+    <mat-form-field fxFlex="10">
+        <mat-label>Code</mat-label>
+        <mat-select formControlName="bizCountryCode">
+            <mat-option *ngFor="let country of countries" [value]="country.code">
+                {{ country.name }} (+{{ country.code }})
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field fxFlex="38">
+        <mat-label>Business Phone Number</mat-label>
+        <input matInput formControlName="bizPhoneNumber">
+    </mat-form-field>
+
+    <div fxLayout="row" style="padding-bottom: 1rem">
+        <button mat-raised-button color="primary" type="submit" class="submit-button">
+            Save
+        </button>
+    </div>
+
+</form>

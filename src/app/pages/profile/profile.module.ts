@@ -9,10 +9,13 @@ import {FuryCardModule} from '../../../@fury/shared/card/card.module';
 import {BreadcrumbsModule} from '../../../@fury/shared/breadcrumbs/breadcrumbs.module';
 import {ProfileRoutingModule} from './profile.routing.module';
 import {ContactDetailsFormModule} from '../components/contact-details-form/contact-details-form.module';
+import {CardManagementModule} from '../components/card-management/card-management.module';
+import {ComponentsModule} from '../components/components.module';
 
 @NgModule({
     imports: [
         CommonModule,
+        CardManagementModule,
         ContactDetailsFormModule,
         FurySharedModule,
         MaterialModule,

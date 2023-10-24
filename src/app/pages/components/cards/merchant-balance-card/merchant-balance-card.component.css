@@ -1,0 +1,22 @@
+.account-balance-card {
+  margin: 0 auto;
+}
+.account-balance-card .balance-info {
+  display: flex;
+  flex-direction: column;
+}
+.account-balance-card .balance-info .balance-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+}
+.account-balance-card .balance-info .balance-row .balance-label {
+  font-weight: bold;
+}
+.account-balance-card .balance-info .balance-amount {
+  font-size: 1.2em;
+}
+.account-balance-card mat-card-actions {
+  display: flex;
+  justify-content: left;
+}/*# sourceMappingURL=merchant-balance-card.component.css.map */

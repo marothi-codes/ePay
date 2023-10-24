@@ -1,0 +1,12 @@
+<div *ngFor="let card of cards" style="margin: 1.4rem;">
+    <mat-card class="card-element" style=" background-color: #f1f1f1!important">
+        <mat-card-title>{{ card.cardHolderName }}</mat-card-title>
+        <mat-card-content>
+            <p>Card Number: {{ card.cardNumber }}</p>
+            <p>Expiration Date: {{ card.expirationDate }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button color="accent" (click)="editCard(card)">Edit</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

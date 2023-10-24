@@ -24,7 +24,6 @@ import { SliderComponent } from './slider/slider.component';
 import { SnackBarComponent } from './snack-bar/snack-bar.component';
 import { TooltipComponent } from './tooltip/tooltip.component';
 import { FurySharedModule } from '../../../@fury/fury-shared.module';
-import { MerchantBalanceCardComponent } from './cards/merchant-balance-card/merchant-balance-card.component';
 
 @NgModule({
   imports: [
@@ -58,7 +57,6 @@ import { MerchantBalanceCardComponent } from './cards/merchant-balance-card/merc
     SnackBarComponent,
     TooltipComponent,
     SlideToggleComponent,
-    // MerchantBalanceCardComponent,
   ]
 })
 export class ComponentsModule {
