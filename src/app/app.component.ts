@@ -60,7 +60,7 @@ export class AppComponent {
       },
       {
         name: 'Transactions',
-        routeOrFunction: '/tables/all-in-one-table',
+        routeOrFunction: '/transactions',
         icon: 'assignment',
         // badge: '22', // TODO: Pull transactions qty from backend service.
         // badgeColor: '#D86281',
@@ -68,7 +68,7 @@ export class AppComponent {
       },
       {
         name: 'Accounts',
-        routeOrFunction: '/apps/calendar',
+        routeOrFunction: '/accounts',
         icon: 'account_balance',
         position: 20,
       },
@@ -147,9 +147,9 @@ export class AppComponent {
         position: 50,
       },
       {
-        name: 'Recurring Billing',
-        routeOrFunction: '/recurring-billing',
-        icon: 'card_membership',
+        name: 'Business Profile',
+        routeOrFunction: '/business/profile',
+        icon: 'store',
         position: 55,
       },
     ]);

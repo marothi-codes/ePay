@@ -3,6 +3,7 @@ import {CardManagementService} from '../../../services/card-management.service';
 import {MatDialog} from '@angular/material/dialog';
 import {CardEditDialogComponent} from '../card-edit-dialog/card-edit-dialog.component';
 import {Card} from '../../../models/card.model';
+import {Observable, ReplaySubject} from 'rxjs';
 
 @Component({
   selector: 'fury-card-management',
@@ -53,15 +54,13 @@ export class CardManagementComponent implements OnInit {
   }
 
   editCard(card: Card): void {
-    const dialogRef = this.dialog.open(CardEditDialogComponent, {
-
-      width: '500px',
-      data: { card: { ...card } }
-    });
-
-    dialogRef.afterClosed().subscribe((updatedCard: Card) => {
-      if (updatedCard) {
-        this.cardService.updateCard(updatedCard);
+    this.dialog.open(CardEditDialogComponent, {
+      data: card // Pass the data to the edit modal component
+    })
+      .afterClosed()
+      .subscribe(res => {
+      if (res) {
+        this.cardService.updateCard(res);
       }
     });
 

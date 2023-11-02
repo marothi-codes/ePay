@@ -52,16 +52,16 @@ const routes: Routes = [
           import('./pages/payment-methods/payment-methods.module').then((m) => m.PaymentMethodsModule),
       },
       {
-        path: 'recurring-billing',
+        path: 'business/profile',
         loadChildren: () =>
-          import('./pages/recurring-billing/recurring-billing.module').then(
-            (m) => m.RecurringBillingModule
+          import('./pages/business-profile/business-profile.module').then(
+            (m) => m.BusinessProfileModule
           ),
       },
       {
-        path: 'apps/chat',
+        path: 'accounts',
         loadChildren: () =>
-          import('./pages/apps/chat/chat.module').then((m) => m.ChatModule),
+          import('./pages/accounts/accounts.module').then((m) => m.AccountsModule),
       },
       {
         path: 'components',
@@ -97,7 +97,7 @@ const routes: Routes = [
           ),
       },
       {
-        path: 'tables/all-in-one-table',
+        path: 'transactions',
         loadChildren: () =>
           import(
             './pages/tables/all-in-one-table/all-in-one-table.module'

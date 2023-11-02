@@ -7,6 +7,7 @@ import { FurySharedModule } from '../../../../@fury/fury-shared.module';
 import { FuryCardModule } from '../../../../@fury/shared/card/card.module';
 import { PageLayoutDemoContentModule } from '../components/page-layout-content/page-layout-demo-content.module';
 import { MatTabsModule } from '@angular/material/tabs';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [PageLayoutCardTabbedComponent],
@@ -16,6 +17,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     FurySharedModule,
     FuryCardModule,
     PageLayoutDemoContentModule,
+    MatCardModule,
     MatTabsModule
   ]
 })

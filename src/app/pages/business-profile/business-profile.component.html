@@ -1,0 +1,121 @@
+<fury-page-layout mode="card">
+
+  <fury-page-layout-header>
+    <fury-breadcrumbs current="Business Profile"></fury-breadcrumbs>
+  </fury-page-layout-header>
+
+  <fury-page-layout-content>
+
+    <fury-card>
+
+      <fury-card-header>
+        <fury-card-header-heading>
+          <h1>Business Details</h1>
+        </fury-card-header-heading>
+      </fury-card-header>
+
+      <fury-card-content>
+        <p>
+          Est sanctus euismod lorem erat stet ipsum laoreet aliquyam. Duo elitr dignissim et accusam amet delenit diam
+          stet delenit consequat dolore zzril sed sit kasd sit dolores. Diam lorem nostrud ipsum ipsum et consequat sed.
+          Consetetur accumsan ipsum dolor at est amet esse tempor aliquyam molestie elitr at. Tempor amet ea in elitr in
+          lorem amet nulla magna est vero soluta lorem consetetur duo amet. At dolores doming vero eu feugiat ex dolore
+          erat augue eos clita dolor consetetur dolore ut. Praesent et commodo sed molestie sanctus sadipscing
+          sadipscing. Ipsum lorem et ipsum euismod ut magna lorem praesent sed et rebum et nobis eirmod wisi suscipit
+          exerci facilisis. Stet gubergren eros dolores et vel aliquyam clita laoreet accusam sanctus ipsum magna sed.
+          <br/>
+          <br/>
+          Zzril takimata at labore esse sanctus. Sed vero gubergren voluptua vel et quis rebum rebum ipsum ipsum enim at
+          aliquam sit ipsum magna ut. Consetetur nulla rebum consequat et blandit congue duo vero diam sit accumsan
+          diam. Gubergren et tempor sed diam dolor gubergren no exerci ut dolore sanctus adipiscing dolore kasd. Sanctus
+          justo elit duo clita ad vel molestie iusto tempor lorem dolor eirmod. Nihil rebum sea clita lorem velit. Clita
+          sit et erat ut sit sanctus justo dolores tempor et facilisi duo ut et diam vulputate consetetur. Clita dolore
+          justo sit autem no facer justo dolore nonumy luptatum et et in nonumy.
+        </p>
+
+        <!-- FIRST ROW -> ACCOUNT LIMITS -->
+        <div fxLayout="row" style="margin: 0.5rem">
+
+          <div fxFlex="40" style="margin-right: 0.6rem">
+            <h2>Account Limits</h2>
+            <mat-divider></mat-divider>
+
+            <p>
+              The various limits on your account get reset every 28 days starting from the date of your registration.
+              Please contact us should you require one of these limits to be increased.
+            </p>
+
+          </div>
+
+          <div fxFlex="60">
+            <fury-account-limit></fury-account-limit>
+          </div>
+
+        </div>
+        <!-- SECOND ROW -> ACCOUNT DETAILS FORM -->
+        <div fxLayout="row" style="margin: 0.5rem">
+
+          <div fxFlex="40" style="margin-right: 0.6rem">
+            <h2>Account Details</h2>
+            <mat-divider></mat-divider>
+
+            <p>
+              You account details include the information that you submitted about your company when you registered for a ePay account, as well as your current balance that can be paid out.
+            </p>
+
+            <p>
+              Please contact eZaga support in order to update your registered name or company registration number.
+            </p>
+
+          </div>
+
+          <div fxFlex="60">
+            <fury-account-details></fury-account-details>
+          </div>
+
+        </div>
+
+        <!-- THIRD ROW -> BANK ACCOUNT DETAILS -->
+        <div fxLayout="row" style="margin: 0.5rem">
+
+          <div fxFlex="40" style="margin-right: 0.6rem">
+            <h2>Banking Details</h2>
+            <mat-divider></mat-divider>
+
+            <p>
+              Manage and update your banking details that your Payfast account is linked to, for payouts and managing subscriptions, etc.
+            </p>
+
+          </div>
+
+          <fury-bank-details-form fxFlex="60"></fury-bank-details-form>
+
+        </div>
+
+        <!-- FORTH ROW -> BUSINESS ADDRESS DETAILS -->
+        <div fxLayout="row" style="margin: 0.5rem">
+
+          <div fxFlex="40" style="margin-right: 0.6rem">
+            <h2>Business Address</h2>
+            <mat-divider></mat-divider>
+
+            <p>
+              Update the physical address that you used when you signed up for a Payfast account.
+            </p>
+
+          </div>
+
+          <!-- BUSINESS ADDRESS FORM -->
+          <div fxFlex.gt-sm="100" fxFlex>
+            <fury-address-form></fury-address-form>
+          </div>
+
+        </div>
+
+      </fury-card-content>
+
+    </fury-card>
+
+  </fury-page-layout-content>
+
+</fury-page-layout>

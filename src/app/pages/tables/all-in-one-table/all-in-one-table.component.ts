@@ -13,14 +13,13 @@ import { fadeInRightAnimation } from '../../../../@fury/animations/fade-in-right
 import { fadeInUpAnimation } from '../../../../@fury/animations/fade-in-up.animation';
 
 @Component({
-  selector: "fury-all-in-one-table",
-  templateUrl: "./all-in-one-table.component.html",
-  styleUrls: ["./all-in-one-table.component.scss"],
+  selector: 'fury-all-in-one-table',
+  templateUrl: './all-in-one-table.component.html',
+  styleUrls: ['./all-in-one-table.component.scss'],
   animations: [fadeInRightAnimation, fadeInUpAnimation],
 })
 export class AllInOneTableComponent
-  implements OnInit, AfterViewInit, OnDestroy
-{
+  implements OnInit, AfterViewInit, OnDestroy {
   /**
    * Simulating a service with HTTP that returns Observables
    * You probably want to remove this and do all requests in a service with HTTP
@@ -31,41 +30,41 @@ export class AllInOneTableComponent
 
   @Input()
   columns: ListColumn[] = [
-    { name: "Checkbox", property: "checkbox", visible: false },
+    { name: 'Checkbox', property: 'checkbox', visible: false },
     // { name: "Image", property: "image", visible: true },
     {
-      name: "Account No",
-      property: "name",
+      name: 'Account No',
+      property: 'name',
       visible: false,
       isModelProperty: true,
     },
     {
-      name: "Account No",
-      property: "firstName",
+      name: 'Account No',
+      property: 'firstName',
       visible: true,
       isModelProperty: true,
     },
     {
-      name: "Currency",
-      property: "lastName",
+      name: 'Currency',
+      property: 'lastName',
       visible: true,
       isModelProperty: true,
     },
     {
-      name: "Amount",
-      property: "street",
+      name: 'Amount',
+      property: 'street',
       visible: true,
       isModelProperty: true,
     },
-    { name: "Date", property: "mail", visible: true, isModelProperty: true },
+    { name: 'Date', property: 'mail', visible: true, isModelProperty: true },
     {
-      name: "Trans Ref",
-      property: "city",
+      name: 'Trans Ref',
+      property: 'city',
       visible: true,
       isModelProperty: true,
     },
     // { name: 'Phone', property: 'phoneNumber', visible: true, isModelProperty: true },
-    { name: "Actions", property: "actions", visible: true },
+    { name: 'Actions', property: 'actions', visible: true },
   ] as ListColumn[];
   pageSize = 10;
   dataSource: MatTableDataSource<Customer> | null;

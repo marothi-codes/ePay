@@ -1,0 +1,61 @@
+<form>
+
+  <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="16px">
+
+    <mat-form-field fxFlex="49">
+      <mat-label>Bank</mat-label>
+      <mat-select>
+        <mat-option value="Absa">Absa</mat-option>
+        <mat-option value="African Bank">African Bank</mat-option>
+        <mat-option value="Bidvest Bank">Bidvest Bank</mat-option>
+        <mat-option value="Capitec">Capitec</mat-option>
+        <mat-option value="Discovery">Discovery</mat-option>
+        <mat-option value="FNB">FNB</mat-option>
+        <mat-option value="Investec">Investec</mat-option>
+        <mat-option value="Nedbank">Nedbank</mat-option>
+        <mat-option value="Standard Bank">Standard Bank</mat-option>
+        <mat-option value="Tyme Bank">Tyme Bank</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field fxFlex>
+      <mat-label>Account Type</mat-label>
+      <mat-select>
+        <mat-option value="Cheque/ Transmission">Cheque/ Transmission</mat-option>
+        <mat-option value="Savings">Savings</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+
+  <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="16px">
+
+    <mat-form-field fxFlex>
+      <input matInput placeholder="Branch Name" type="text">
+    </mat-form-field>
+
+    <mat-form-field color="accent" fxFlex.gt-sm>
+      <input matInput placeholder="Branch Code" type="number">
+    </mat-form-field>
+
+  </div>
+
+  <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="16px">
+
+    <mat-form-field color="primary" fxFlex.gt-sm>
+      <input matInput placeholder="Account Number" type="text">
+    </mat-form-field>
+
+    <mat-form-field color="accent" fxFlex.gt-sm>
+      <input matInput placeholder="Account Holder" type="text">
+    </mat-form-field>
+
+  </div>
+
+  <div fxLayout="row">
+    <button mat-raised-button color="primary" type="submit" class="submit-button">
+      Save
+    </button>
+  </div>
+
+</form>

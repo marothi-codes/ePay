@@ -11,27 +11,30 @@ import {CardManagementService} from '../../../services/card-management.service';
 })
 export class CardEditDialogComponent implements OnInit {
 
-  cardForm: FormGroup;
   card: Card;
+  cardForm: FormGroup;
 
   constructor(
       private fb: FormBuilder,
       public dialogRef: MatDialogRef<CardEditDialogComponent>,
-      @Inject(MAT_DIALOG_DATA) public data: any,
+      @Inject(MAT_DIALOG_DATA) public data: Card,
       private cardService: CardManagementService
-  ) {}
-
-  ngOnInit() {
-    this.cardForm = this.fb.group({
-      cardHolderName: [this.card.cardHolderName, [Validators.required]],
-      cardNumber: [this.card.cardNumber, [Validators.required]],
-      expirationDate: [this.card.expirationDate, [Validators.required]],
-      cvv: [this.card.cvv, [Validators.required]]
-    });
+  ) {
     this.card = this.cardService.getCard(this.data.id);
   }
 
+  ngOnInit() {
+    this.cardForm = this.fb.group({
+      id: [this.card.id],
+      cardHolderName: [this.card.cardHolderName],
+      cardNumber: [this.card.cardNumber],
+      expirationDate: [this.card.expirationDate],
+      cvv: [this.card.cvv]
+    });
+  }
+
   onSaveClick(): void {
+    this.cardService.updateCard(this.card);
     this.dialogRef.close(this.cardForm.value);
   }
 

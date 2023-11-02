@@ -1,0 +1,159 @@
+<form>
+
+  <!-- BUSINESS PHYSICAL ADDRESS --------------------------------------------------------------- -->
+  <div fxLayout="row">
+
+    <!-- LEGEND -->
+    <legend fxFlex>
+      <h3>Business Physical Address</h3>
+      <mat-divider></mat-divider>
+      <br />
+    </legend>
+
+  </div>
+
+  <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="16px">
+
+    <!-- ADDRESS LINE 1 -->
+    <mat-form-field color="primary" fxFlex.gt-sm>
+      <input matInput placeholder="Address Line 1" type="text"/>
+    </mat-form-field>
+
+    <!-- ADDRESS LINE 2 -->
+    <mat-form-field color="primary" fxFlex.gt-sm>
+      <input matInput placeholder="Address Line 2" type="text"/>
+    </mat-form-field>
+
+  </div>
+
+  <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="16px">
+    <!-- SUBURB -->
+    <mat-form-field color="primary" fxFlex.gt-sm>
+      <input matInput placeholder="Suburb" type="text"/>
+    </mat-form-field>
+
+    <!-- CITY -->
+    <mat-form-field color="primary" fxFlex.gt-sm>
+      <input matInput placeholder="Town/ City" type="text"/>
+    </mat-form-field>
+  </div>
+
+  <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="16px">
+
+    <!-- STATE/ PROVINCE -->
+    <mat-form-field fxFlex.gt-sm>
+      <mat-label>State/ Province</mat-label>
+      <mat-select>
+        <mat-option value="Gauteng">Gauteng</mat-option>
+        <mat-option value="Eastern Cape">Eastern Cape</mat-option>
+        <mat-option value="Free State">Free State</mat-option>
+        <mat-option value="Kwa Zulu Natal">Kwa Zulu Natal</mat-option>
+        <mat-option value="Limpopo">Limpopo</mat-option>
+        <mat-option value="Mpumalanga">Mpumalanga</mat-option>
+        <mat-option value="North West">North West</mat-option>
+        <mat-option value="Northern Cape">Northern Cape</mat-option>
+        <mat-option value="Other">Other</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- POSTAL/ ZIP CODE -->
+    <mat-form-field color="primary" fxFlex.gt-sm="49">
+      <input matInput placeholder="Postal/ Zip Code" type="text"/>
+    </mat-form-field>
+
+  </div>
+
+  <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="16px">
+
+    <!-- COUNTRY -->
+    <mat-form-field color="primary" fxFlex fxFlex.gt-sm="49">
+      <input matInput placeholder="Country" type="text"/>
+    </mat-form-field>
+
+  </div>
+
+  <div fxLayout="row" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="16px">
+    <!-- SAME AS ABOVE CHECKBOX -->
+    <mat-checkbox color="primary">Same as above</mat-checkbox>
+  </div>
+
+  <!-- POSTAL ADDRESS ------------------------------------------------------------------------- -->
+  <div fxLayout="row" style="padding-top: 1.6rem">
+
+    <!-- LEGEND -->
+    <legend fxFlex>
+      <mat-divider></mat-divider>
+      <h3>Business Postal Address</h3>
+      <mat-divider></mat-divider>
+      <br />
+    </legend>
+
+  </div>
+
+  <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="16px">
+
+    <!-- ADDRESS LINE 1 -->
+    <mat-form-field color="primary" fxFlex.gt-sm>
+      <input matInput placeholder="Address Line 1" type="text"/>
+    </mat-form-field>
+
+    <!-- ADDRESS LINE 2 -->
+    <mat-form-field color="primary" fxFlex.gt-sm>
+      <input matInput placeholder="Address Line 2" type="text"/>
+    </mat-form-field>
+
+  </div>
+
+  <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="16px">
+    <!-- SUBURB -->
+    <mat-form-field color="primary" fxFlex.gt-sm>
+      <input matInput placeholder="Suburb" type="text"/>
+    </mat-form-field>
+
+    <!-- CITY -->
+    <mat-form-field color="primary" fxFlex.gt-sm>
+      <input matInput placeholder="Town/ City" type="text"/>
+    </mat-form-field>
+  </div>
+
+  <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="16px">
+
+    <!-- STATE/ PROVINCE -->
+    <mat-form-field fxFlex.gt-sm>
+      <mat-label>State/ Province</mat-label>
+      <mat-select>
+        <mat-option value="Gauteng">Gauteng</mat-option>
+        <mat-option value="Eastern Cape">Eastern Cape</mat-option>
+        <mat-option value="Free State">Free State</mat-option>
+        <mat-option value="Kwa Zulu Natal">Kwa Zulu Natal</mat-option>
+        <mat-option value="Limpopo">Limpopo</mat-option>
+        <mat-option value="Mpumalanga">Mpumalanga</mat-option>
+        <mat-option value="North West">North West</mat-option>
+        <mat-option value="Northern Cape">Northern Cape</mat-option>
+        <mat-option value="Other">Other</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- POSTAL/ ZIP CODE -->
+    <mat-form-field color="primary" fxFlex.gt-sm="49">
+      <input matInput placeholder="Postal/ Zip Code" type="text"/>
+    </mat-form-field>
+
+  </div>
+
+  <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="16px">
+
+    <!-- COUNTRY -->
+    <mat-form-field color="primary" fxFlex fxFlex.gt-sm="49">
+      <input matInput placeholder="Country" type="text"/>
+    </mat-form-field>
+
+  </div>
+
+  <div fxLayout="row">
+    <button mat-raised-button color="primary" type="submit" class="submit-button">
+      Save
+    </button>
+  </div>
+
+</form>
