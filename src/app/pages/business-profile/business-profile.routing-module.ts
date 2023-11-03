@@ -5,7 +5,8 @@ import {NgModule} from '@angular/core';
 const routes: Routes = [
   {
     path: '',
-    component: BusinessProfileComponent
+    component: BusinessProfileComponent,
+    title: 'Business Profile - ePay | Banking & Merchant Portal'
   }
 ];
 

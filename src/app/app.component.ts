@@ -1,18 +1,19 @@
-import { DOCUMENT } from '@angular/common';
-import { Component, Inject, Renderer2 } from '@angular/core';
-import { MatIconRegistry } from '@angular/material/icon';
-import { SidenavService } from './layout/sidenav/sidenav.service';
-import { ThemeService } from '../@fury/services/theme.service';
-import { ActivatedRoute } from '@angular/router';
-import { filter } from 'rxjs/operators';
-import { Platform } from '@angular/cdk/platform';
-import { SplashScreenService } from '../@fury/services/splash-screen.service';
+import {DOCUMENT} from '@angular/common';
+import {Component, Inject, OnInit, Renderer2} from '@angular/core';
+import {MatIconRegistry} from '@angular/material/icon';
+import {SidenavService} from './layout/sidenav/sidenav.service';
+import {ThemeService} from '../@fury/services/theme.service';
+import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
+import {filter, map} from 'rxjs/operators';
+import {Platform} from '@angular/cdk/platform';
+import {SplashScreenService} from '../@fury/services/splash-screen.service';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'fury-root',
   templateUrl: './app.component.html',
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   constructor(
     private sidenavService: SidenavService,
     private iconRegistry: MatIconRegistry,
@@ -21,7 +22,9 @@ export class AppComponent {
     @Inject(DOCUMENT) private document: Document,
     private platform: Platform,
     private route: ActivatedRoute,
-    private splashScreenService: SplashScreenService
+    private splashScreenService: SplashScreenService,
+    private router: Router,
+    private titleService: Title
   ) {
     this.route.queryParamMap
       .pipe(filter((queryParamMap) => queryParamMap.has('style')))
@@ -95,5 +98,28 @@ export class AppComponent {
         position: 40,
       },
     ]);
+  }
+
+  ngOnInit() {
+    this.router.events
+      .pipe(
+        filter((event) => event instanceof NavigationEnd),
+        map(() => {
+          let route: ActivatedRoute = this.router.routerState.root;
+          let routeTitle = '';
+          while (route!.firstChild) {
+            route = route.firstChild;
+          }
+          if (route.snapshot.data['title']) {
+            routeTitle = `${route!.snapshot.data['title']} - ePay | Banking & Merchant Portal`;
+          }
+          return routeTitle + ' - ePay | Banking & Merchant Portal';
+        })
+      )
+      .subscribe((title: string) => {
+        if (title) {
+          this.titleService.setTitle(title + ' - ePay | Banking & Merchant Portal');
+        }
+      });
   }
 }

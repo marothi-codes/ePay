@@ -5,7 +5,8 @@ import {AccountsComponent} from './accounts.component';
 const routes: Routes = [
   {
     path: '',
-    component: AccountsComponent
+    component: AccountsComponent,
+    title: 'My Accounts - ePay | Banking & Merchant Portal'
   }
 ];
 

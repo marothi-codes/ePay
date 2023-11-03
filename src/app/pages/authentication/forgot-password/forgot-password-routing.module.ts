@@ -5,7 +5,8 @@ import { ForgotPasswordComponent } from './forgot-password.component';
 const routes: Routes = [
   {
     path: '',
-    component: ForgotPasswordComponent
+    component: ForgotPasswordComponent,
+    title: 'Forgot Password - ePay | Banking & Merchant Portal'
   }
 ];
 
