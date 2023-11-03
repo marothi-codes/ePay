@@ -49,23 +49,23 @@
         <ng-container matColumnDef="actions">
           <th *matHeaderCellDef class="actions-cell" mat-header-cell mat-sort-header></th>
           <td *matCellDef="let row" class="actions-cell" mat-cell>
-            <button type="button" mat-icon-button [matMenuTriggerFor]="actionsMenu" (click)="$event.stopPropagation()">
+            <button type="button" mat-icon-button (click)="$event.stopPropagation()">
               <mat-icon>more_horiz</mat-icon>
             </button>
 
-            <mat-menu #actionsMenu="matMenu" yPosition="below" xPosition="before">
-              <button (click)="updateCustomer(row)" mat-menu-item>
-                <span>Modify</span>
-              </button>
-              <button (click)="deleteCustomer(row)" mat-menu-item>
-                <span>Delete</span>
-              </button>
-            </mat-menu>
+<!--            <mat-menu #actionsMenu="matMenu" yPosition="below" xPosition="before">-->
+<!--              <button (click)="updateCustomer(row)" mat-menu-item>-->
+<!--                <span>Modify</span>-->
+<!--              </button>-->
+<!--              <button (click)="deleteCustomer(row)" mat-menu-item>-->
+<!--                <span>Delete</span>-->
+<!--              </button>-->
+<!--            </mat-menu>-->
           </td>
         </ng-container>
 
         <tr *matHeaderRowDef="visibleColumns" mat-header-row></tr>
-        <tr (click)="updateCustomer(row)"
+        <tr
             *matRowDef="let row; columns: visibleColumns;"
             class="clickable route-animations-elements"
             mat-row></tr>

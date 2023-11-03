@@ -7,6 +7,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {AccountRoutingModule} from './account-routing.module';
 import {AccountsComponent} from './accounts.component';
 import {AccountCardTabbedModule} from './account-card-tabbed/account-card-tabbed.module';
+import {MaterialModule} from '../../../@fury/shared/material-components.module';
 
 @NgModule({
   declarations: [AccountsComponent],
@@ -16,6 +17,7 @@ import {AccountCardTabbedModule} from './account-card-tabbed/account-card-tabbed
     AccountCardTabbedModule,
     FurySharedModule,
     FuryCardModule,
+    MaterialModule,
     PageLayoutDemoContentModule,
     MatTabsModule
   ]

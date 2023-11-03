@@ -64,7 +64,7 @@ export class AllInOneTableComponent
       isModelProperty: true,
     },
     // { name: 'Phone', property: 'phoneNumber', visible: true, isModelProperty: true },
-    { name: 'Actions', property: 'actions', visible: true },
+    { name: 'Actions', property: 'actions', visible: false },
   ] as ListColumn[];
   pageSize = 10;
   dataSource: MatTableDataSource<Customer> | null;

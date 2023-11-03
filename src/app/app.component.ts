@@ -42,7 +42,6 @@ export class AppComponent {
       this.renderer.addClass(this.document.body, 'is-blink');
     }
 
-
     // Add navigation items to sidebar.
     this.sidenavService.addItems([
       {
@@ -72,85 +71,28 @@ export class AppComponent {
         icon: 'account_balance',
         position: 20,
       },
-      // {
-      //   name: 'Statements',
-      //   routeOrFunction: '/apps/inbox',
-      //   icon: 'inbox',
-      //   position: 25,
-      // },
       {
         name: 'Payouts',
         routeOrFunction: '/payouts',
         icon: 'attach_money',
-        position: 30,
+        position: 25,
       },
       {
         name: 'PAYMENT SETTINGS',
         type: 'subheading',
-        position: 35,
+        position: 30,
       },
-      // {
-      //   name: "Authentication",
-      //   icon: "lock",
-      //   position: 40,
-      //   subItems: [
-      //     {
-      //       name: "Login Page",
-      //       routeOrFunction: "/login",
-      //       position: 5,
-      //     },
-      //     {
-      //       name: "Register Page",
-      //       routeOrFunction: "/register",
-      //       position: 10,
-      //     },
-      //     {
-      //       name: "Forgot Password",
-      //       routeOrFunction: "/forgot-password",
-      //       position: 15,
-      //     },
-      //   ],
-      // },
-      // {
-      //   name: "Page Layouts",
-      //   icon: "view_compact",
-      //   position: 45,
-      //   subItems: [
-      //     {
-      //       name: "Simple",
-      //       routeOrFunction: "/page-layouts/simple",
-      //       position: 5,
-      //     },
-      //     {
-      //       name: "Simple Tabbed",
-      //       routeOrFunction: "/page-layouts/simple-tabbed",
-      //       position: 5,
-      //     },
-      //     {
-      //       name: "Card",
-      //       routeOrFunction: "/page-layouts/card",
-      //       position: 10,
-      //     },
-      //     {
-      //       name: "Card Tabbed",
-      //       routeOrFunction: "/page-layouts/card-tabbed",
-      //       position: 15,
-      //     },
-      //   ],
-      //   badge: "4",
-      //   badgeColor: "#4CAF50",
-      // },
       {
         name: 'Payment Methods',
         routeOrFunction: '/payment-methods',
         icon: 'credit_card',
-        position: 50,
+        position: 35,
       },
       {
         name: 'Business Profile',
         routeOrFunction: '/business/profile',
         icon: 'store',
-        position: 55,
+        position: 40,
       },
     ]);
   }
