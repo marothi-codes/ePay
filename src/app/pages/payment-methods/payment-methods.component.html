@@ -23,7 +23,29 @@
         <h2>Select your desired payment methods:</h2>
 
         <!-- Iterate though all the payment methods offered by eZaga -->
+        <div fxLayout="row" fxLayoutGap="16px">
 
+          <!-- INSTANT EFT -->
+          <div fxLayout="column" fxLayout.lt-sm="row" fxFlex>
+
+            <fury-payment-method-widget
+              paymentMethodName="Credit or Debit Card"
+              paymentMethodLogo="assets/icons/payment-methods/credit-debit.svg"
+            ></fury-payment-method-widget>
+
+          </div>
+
+          <!-- CREDIT/ DEBIT CARD -->
+          <div fxLayout="column" fxLayout.lt-sm="row" fxFlex>
+
+            <fury-payment-method-widget
+              paymentMethodName="Instant EFT"
+              paymentMethodLogo="assets/icons/payment-methods/instant-eft.svg"
+            ></fury-payment-method-widget>
+
+          </div>
+
+        </div>
         <!-- Loop ends here -->
 
       </fury-card-content>

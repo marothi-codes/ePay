@@ -1,0 +1,18 @@
+.payment-method-card {
+  background-color: #f2f2f2; /* Off-white background color */
+  padding: 16px;
+}
+
+.payment-method-logo img {
+  width: 128px;
+  height: 128px;
+}
+
+.payment-method-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.disabled {
+  opacity: 0.6;
+}

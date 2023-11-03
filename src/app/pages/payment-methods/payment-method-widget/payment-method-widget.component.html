@@ -1,0 +1,9 @@
+<mat-card class="payment-method-card" [ngClass]="{'disabled': !enabled}">
+  <div class="payment-method-logo">
+    <img [src]="paymentMethodLogo" alt="Payment Method Logo" />
+  </div>
+  <div class="payment-method-info">
+    <h2>{{ paymentMethodName }}</h2>
+    <mat-slide-toggle [(ngModel)]="enabled" color="primary">Enable</mat-slide-toggle>
+  </div>
+</mat-card>
