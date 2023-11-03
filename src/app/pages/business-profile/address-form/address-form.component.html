@@ -1,4 +1,4 @@
-<form>
+<form [formGroup]="addressForm">
 
   <!-- BUSINESS PHYSICAL ADDRESS --------------------------------------------------------------- -->
   <div fxLayout="row">
@@ -16,12 +16,12 @@
 
     <!-- ADDRESS LINE 1 -->
     <mat-form-field color="primary" fxFlex.gt-sm>
-      <input matInput placeholder="Address Line 1" type="text"/>
+      <input matInput placeholder="Address Line 1" formControlName="physicalAddressLine1" type="text"/>
     </mat-form-field>
 
     <!-- ADDRESS LINE 2 -->
     <mat-form-field color="primary" fxFlex.gt-sm>
-      <input matInput placeholder="Address Line 2" type="text"/>
+      <input matInput placeholder="Address Line 2" formControlName="physicalAddressLine2" type="text"/>
     </mat-form-field>
 
   </div>
@@ -29,12 +29,12 @@
   <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="16px">
     <!-- SUBURB -->
     <mat-form-field color="primary" fxFlex.gt-sm>
-      <input matInput placeholder="Suburb" type="text"/>
+      <input matInput placeholder="Suburb" formControlName="physicalAddressSuburb" type="text"/>
     </mat-form-field>
 
     <!-- CITY -->
     <mat-form-field color="primary" fxFlex.gt-sm>
-      <input matInput placeholder="Town/ City" type="text"/>
+      <input matInput placeholder="Town/ City" formControlName="physicalAddressTownCity" type="text"/>
     </mat-form-field>
   </div>
 
@@ -43,7 +43,7 @@
     <!-- STATE/ PROVINCE -->
     <mat-form-field fxFlex.gt-sm>
       <mat-label>State/ Province</mat-label>
-      <mat-select>
+      <mat-select formControlName="physicalAddressStateProvince">
         <mat-option value="Gauteng">Gauteng</mat-option>
         <mat-option value="Eastern Cape">Eastern Cape</mat-option>
         <mat-option value="Free State">Free State</mat-option>
@@ -58,7 +58,7 @@
 
     <!-- POSTAL/ ZIP CODE -->
     <mat-form-field color="primary" fxFlex.gt-sm="49">
-      <input matInput placeholder="Postal/ Zip Code" type="text"/>
+      <input matInput placeholder="Postal/ Zip Code" formControlName="physicalAddressPostalCode" type="text"/>
     </mat-form-field>
 
   </div>
@@ -67,14 +67,14 @@
 
     <!-- COUNTRY -->
     <mat-form-field color="primary" fxFlex fxFlex.gt-sm="49">
-      <input matInput placeholder="Country" type="text"/>
+      <input matInput placeholder="Country" formControlName="physicalAddressCountry" type="text"/>
     </mat-form-field>
 
   </div>
 
   <div fxLayout="row" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="16px">
     <!-- SAME AS ABOVE CHECKBOX -->
-    <mat-checkbox color="primary">Same as above</mat-checkbox>
+    <mat-checkbox color="primary" formControlName="sameAsAbove" (change)="copyPhysicalAddressToPostalAddress($event.checked)">Same as above</mat-checkbox>
   </div>
 
   <!-- POSTAL ADDRESS ------------------------------------------------------------------------- -->
@@ -94,12 +94,12 @@
 
     <!-- ADDRESS LINE 1 -->
     <mat-form-field color="primary" fxFlex.gt-sm>
-      <input matInput placeholder="Address Line 1" type="text"/>
+      <input matInput placeholder="Address Line 1" formControlName="postalAddressLine1" type="text"/>
     </mat-form-field>
 
     <!-- ADDRESS LINE 2 -->
     <mat-form-field color="primary" fxFlex.gt-sm>
-      <input matInput placeholder="Address Line 2" type="text"/>
+      <input matInput placeholder="Address Line 2" formControlName="postalAddressLine2" type="text"/>
     </mat-form-field>
 
   </div>
@@ -107,12 +107,12 @@
   <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="16px">
     <!-- SUBURB -->
     <mat-form-field color="primary" fxFlex.gt-sm>
-      <input matInput placeholder="Suburb" type="text"/>
+      <input matInput placeholder="Suburb" formControlName="postalAddressSuburb" type="text"/>
     </mat-form-field>
 
     <!-- CITY -->
     <mat-form-field color="primary" fxFlex.gt-sm>
-      <input matInput placeholder="Town/ City" type="text"/>
+      <input matInput placeholder="Town/ City" formControlName="postalAddressTownCity" type="text"/>
     </mat-form-field>
   </div>
 
@@ -121,7 +121,7 @@
     <!-- STATE/ PROVINCE -->
     <mat-form-field fxFlex.gt-sm>
       <mat-label>State/ Province</mat-label>
-      <mat-select>
+      <mat-select formControlName="postalAddressStateProvince">
         <mat-option value="Gauteng">Gauteng</mat-option>
         <mat-option value="Eastern Cape">Eastern Cape</mat-option>
         <mat-option value="Free State">Free State</mat-option>
@@ -136,7 +136,7 @@
 
     <!-- POSTAL/ ZIP CODE -->
     <mat-form-field color="primary" fxFlex.gt-sm="49">
-      <input matInput placeholder="Postal/ Zip Code" type="text"/>
+      <input matInput placeholder="Postal/ Zip Code" formControlName="postalAddressPostalCode" type="text"/>
     </mat-form-field>
 
   </div>
@@ -145,7 +145,7 @@
 
     <!-- COUNTRY -->
     <mat-form-field color="primary" fxFlex fxFlex.gt-sm="49">
-      <input matInput placeholder="Country" type="text"/>
+      <input matInput placeholder="Country" formControlName="postalAddressCountry" type="text"/>
     </mat-form-field>
 
   </div>
