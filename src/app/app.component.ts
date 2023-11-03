@@ -57,14 +57,14 @@ export class AppComponent {
         position: 10,
         pathMatchExact: true,
       },
-      {
-        name: 'Transactions',
-        routeOrFunction: '/transactions',
-        icon: 'assignment',
-        // badge: '22', // TODO: Pull transactions qty from backend service.
-        // badgeColor: '#D86281',
-        position: 15,
-      },
+      // {
+      //   name: 'Transactions',
+      //   routeOrFunction: '/transactions',
+      //   icon: 'assignment',
+      //   // badge: '22', // TODO: Pull transactions qty from backend service.
+      //   // badgeColor: '#D86281',
+      //   position: 15,
+      // },
       {
         name: 'Accounts',
         routeOrFunction: '/accounts',
